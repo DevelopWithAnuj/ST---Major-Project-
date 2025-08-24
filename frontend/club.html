@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Tracker - Anime Clubs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/club.css">
+    <link rel="stylesheet" href="css/modal.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-left">
+            <img src="assets/logo.png" alt="App Logo" class="app-logo" />
+            <h1 class="app-title">Anime Tracker</h1>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle-button">
+                <i class="fas fa-sun"></i>
+            </button>
+            <a href="notifications.html" class="header-icon">
+                <i class="fas fa-bell notification-icon"></i>
+            </a>
+            <button id="menu-toggle" class="header-icon">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <button class="close-btn" id="close-sidebar">&times;</button>
+            <a href="discover.html"><i class="fas fa-compass"></i> Discover</a>
+            <a href="seasonal.html"><i class="fas fa-calendar-alt"></i> Seasonal</a>
+            <a href="mylist.html"><i class="fas fa-list"></i> My List</a>
+            <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+            <a href="club.html" class="active"><i class="fas fa-users"></i> Clubs</a>
+            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+            <a href="challenges.html"><i class="fas fa-fist-raised"></i> Challenge Stack</a>
+            <a href="help.html"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Support</a>
+            <a href="admin.html" id="admin-dashboard-link" style="display: none">
+                <i class="fas fa-user-shield"></i> Admin Dashboard</a>
+            <a href="welcome.html" id="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Anime Clubs</h1>
+            <button id="createClubBtn" class="create-club-btn">Create New Club</button>
+
+            <div id="createClubModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Create New Club</h2>
+                    <form id="createClubForm">
+                        <div class="form-group">
+                            <label for="clubName">Club Name</label>
+                            <input type="text" id="clubName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clubDescription">Description</label>
+                            <textarea id="clubDescription" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Create Club</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card-list" id="clubList">
+                <!-- Clubs will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <div id="clubDetailView" class="club-detail-view">
+        <!-- Club detail content will be loaded here -->
+    </div>
+
+    
+
+    <script src="js/main.js"></script>
+    <script src="js/club.js"></script>
+    <script>console.log('club.html loaded');</script>
+</body>
+</html>

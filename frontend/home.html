@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Tracker - Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-left">
+        <img src="assets/logo.png" alt="App Logo" class="app-logo" />
+        <h1 class="app-title">Anime Tracker</h1>
+      </div>
+      <div class="header-right">
+        <button id="theme-toggle" class="theme-toggle-button">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="notifications.html" class="header-icon"
+          ><i class="fas fa-bell notification-icon"></i
+        ></a>
+        <button id="menu-toggle" class="header-icon">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-sidebar">&times;</button>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="challenges.html"
+          ><i class="fas fa-fist-raised"></i> Challenge Stack</a
+        >
+        <a href="help.html"
+          ><i class="fas fa-question-circle"></i> Help / FAQ</a
+        >
+        <a href="contact.html"
+          ><i class="fas fa-envelope"></i> Contact Support</a
+        >
+        <a href="admin.html" id="admin-dashboard-link" style="display: none">
+          <i class="fas fa-user-shield"></i> Admin Dashboard</a
+        >
+        <a href="welcome.html" id="logout-button"
+          ><i class="fas fa-sign-out-alt"></i> Logout</a
+        >
+      </div>
+      <div class="overlay" id="overlay"></div>
+    </header>
+    
+    <main class="main-content">
+      <section class="news-feed">
+        <h2>Latest Updates</h2>
+        <div class="anime-list">
+            <div class="anime-item card horizontal">
+                <img src="assets/JujutsuKaisen.png" alt="Jujutsu Kaisen">
+                <div class="content">
+                    <h3>Jujutsu Kaisen Season 2 Announced!</h3>
+                    <p>Get ready for more cursed energy as Jujutsu Kaisen confirms its second season.</p>
+                </div>
+            </div>
+            <div class="anime-item card horizontal">
+                <img src="assets/chainsaw_man.png" alt="Chainsaw Man">
+                <div class="content">
+                    <h3>Chainsaw Man Episode 5 Review</h3>
+                    <p>A deep dive into the latest episode of Chainsaw Man and its impact.</p>
+                </div>
+            </div>
+            <div class="anime-item card horizontal">
+                <img src="assets/spyxfamily.png" alt="Spy x Family">
+                <div class="content">
+                    <h3>Spy x Family Part 2 Coming Soon</h3>
+                    <p>The Forger family returns for more espionage and heartwarming moments.</p>
+                </div>
+            </div>
+            <div class="anime-item card horizontal">
+                <img src="assets/One Piece.png" alt="One Piece">
+                <div class="content">
+                    <h3>One Piece Film: Red Breaks Records</h3>
+                    <p>The latest One Piece movie is a massive success at the box office.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="currently-watching card">
+        <h2>Currently Watching</h2>
+        <div class="anime-list">
+          <!-- Anime items will be dynamically added here -->
+        </div>
+      </section>
+
+      <section class="recommendations card">
+        <h2>Recommendations</h2>
+        <div class="anime-list">
+          <!-- Anime items will be dynamically added here -->
+        </div>
+      </section>
+
+      <section class="recent-activity card">
+        <h2>Recent Activity</h2>
+        <ul class="activity-feed">
+          <!-- Activity items will be dynamically added here -->
+        </ul>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="discussion.html" class="nav-item">
+        <i class="fas fa-comments"></i>
+        <span>Discussions</span>
+      </a>
+      <a href="discover.html" class="nav-item">
+        <i class="fas fa-compass"></i>
+        <span>Discover</span>
+      </a>
+      <a href="seasonal.html" class="nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Seasonal</span>
+      </a>
+      <a href="mylist.html" class="nav-item">
+        <i class="fas fa-list"></i>
+        <span>My List</span>
+      </a>
+    </nav>
+
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

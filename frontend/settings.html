@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Tracker - Settings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-left">
+            <a href="profile.html" class="header-icon"><i class="fas fa-arrow-left"></i></a>
+            <h1 class="app-title">Settings</h1>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle-button"><i class="fas fa-sun"></i></button>
+            <i class="fas fa-bell notification-icon"></i>
+            <button id="menu-toggle" class="header-icon"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-sidebar">&times;</button>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="challenges.html"><i class="fas fa-fist-raised"></i> Challenge Stack</a>
+        <a href="help.html"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact Support</a>
+        <a href="admin.html" id="admin-dashboard-link" style="display: none;">
+            <i class="fas fa-user-shield"></i> Admin Dashboard</a>
+        <a href="welcome.html" id="logout-sidebar"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content">
+        <div class="settings-container">
+            <div class="settings-section">
+                <h2 class="section-title">Appearance</h2>
+                <div class="setting-item">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">Account</h2>
+                <div class="setting-item">
+                    <a href="profile.html" id="edit-profile-setting-link">Edit Profile</a>
+                </div>
+                <div class="setting-item">
+                    <a href="#" id="change-password-link">Change Password</a>
+                </div>
+                <div class="setting-item">
+                    <a href="#" id="delete-account-link" class="text-danger">Delete Account</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

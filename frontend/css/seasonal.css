@@ -1,0 +1,437 @@
+.main-content .seasonal-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0; /* Ensure no gap between tabs */
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    background-color: var(--card-bg); /* Solid background for the entire bar */
+    border: 1px solid var(--card-border); /* Border for the entire bar */
+    border-radius: 8px; /* Rounded corners for the bar */
+    overflow: hidden; /* Clip content that overflows the rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+    height: 50px; /* Fixed height for the navbar */
+}
+
+.main-content .nav-tab {
+    /* Aggressive reset of button default styles */
+    all: unset; /* Remove all inherited styles */
+    box-sizing: border-box; /* Reapply box-sizing */
+
+    display: flex; /* Use flexbox for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+
+    background-color: transparent; /* Background for each tab, transparent by default */
+    color: var(--text-color);
+    padding: 0 25px; /* Consistent padding, vertical padding handled by height */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    flex-grow: 1; /* Distribute space evenly */
+    text-align: center;
+    min-width: 120px; /* Ensure a minimum width */
+}
+
+.main-content .nav-tab:not(:first-child) {
+    border-left: 1px solid var(--card-border); /* Apply border-left to all but the first tab */
+}
+
+.main-content .nav-tab:hover {
+    background-color: var(--nav-item-active); /* Hover effect */
+    color: white;
+}
+
+.main-content .nav-tab.active {
+    background-color: var(--nav-item-active); /* Active state background */
+    color: white; /* Active state text color */
+    font-weight: 600;
+    position: relative;
+}
+
+/* Optional: Add a subtle underline for active tab */
+.main-content .nav-tab.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: white; /* Or a contrasting color */
+}
+
+.main-content .seasonal-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.main-content .filter-buttons {
+    display: flex;
+    gap: 0; /* Remove gap between filter buttons */
+    flex-wrap: wrap;
+    border: 1px solid var(--card-border); /* Border for the entire filter button group */
+    border-radius: 20px; /* Rounded corners for the filter button group */
+    overflow: hidden; /* Clip content that overflows the rounded corners */
+}
+
+.main-content .filter-button {
+    /* Aggressive reset for filter buttons */
+    all: unset;
+    box-sizing: border-box;
+
+    background-color: transparent; /* Transparent background for individual buttons */
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 0; /* Remove individual border-radius */
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content .filter-button:not(:first-child) {
+    border-left: 1px solid var(--card-border); /* Separator between filter buttons */
+}
+
+.main-content .filter-button:hover {
+    background-color: var(--nav-item-active);
+    color: white;
+    border-color: var(--nav-item-active);
+}
+
+.main-content .filter-button.active {
+    background-color: var(--nav-item-active);
+    color: white;
+    border-color: var(--nav-item-active);
+    font-weight: 600;
+}
+
+.main-content .filter-dropdowns select {
+    padding: 8px 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.main-content .filter-dropdowns select:focus {
+    outline: none;
+    border-color: var(--nav-item-active);
+}
+
+.anime-section {
+    margin-bottom: 30px;
+}
+
+.anime-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding: 20px 0;
+    max-height: 70vh; /* Keep vertical scrolling if needed */
+    overflow-y: auto;
+    /* Remove horizontal scrolling properties */
+    overflow-x: hidden; 
+    -webkit-overflow-scrolling: auto;
+    scroll-snap-type: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.anime-list::-webkit-scrollbar {
+    display: none; /* WebKit browsers */
+}
+
+.anime-list::-webkit-scrollbar-track {
+    background: var(--card-border);
+    border-radius: 10px;
+}
+
+.anime-list::-webkit-scrollbar-thumb {
+    background: var(--nav-item-active);
+    border-radius: 10px;
+}
+
+.anime-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative; /* For bookmark icon positioning */
+    /* Remove flexbox related properties */
+    flex: none;
+    width: auto; /* Let grid handle width */
+    margin-right: 0;
+    scroll-snap-align: none;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 200px; /* Adjusted for responsiveness */
+    object-fit: cover;
+    display: block;
+}
+
+.anime-card-image {
+    width: 100%;
+    height: 220px; /* Fixed height for a uniform look */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-bottom: 1px solid var(--card-border);
+}
+
+.anime-card-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.anime-card-info h3 {
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 5px 0; /* Adjusted margin */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.anime-card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.anime-card-details .rating,
+.anime-card-details .members {
+    display: flex;
+    align-items: center;
+}
+
+.anime-card-details .rating i,
+.anime-card-details .members i {
+    margin-right: 5px;
+    color: var(--icon-color);
+}
+
+.anime-genres {
+    font-size: 0.8em;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bookmark-icon {
+    color: var(--icon-color); /* Use a variable for consistency */
+    cursor: pointer;
+    font-size: 1.5em; /* Slightly larger for better interaction */
+    transition: color 0.2s ease-in-out, transform 0.2s ease;
+    position: absolute;
+    top: 10px; /* Adjusted positioning */
+    right: 10px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.bookmark-icon:hover {
+    transform: scale(1.1); /* Add a subtle hover effect */
+}
+
+.bookmark-icon.fas {
+    color: #ffc107; /* Gold color for bookmarked */
+}
+
+/* Responsive adjustments for grid layout */
+@media (max-width: 768px) {
+    .main-content .seasonal-nav, .main-content .seasonal-filters {
+        gap: 8px;
+    }
+
+    .main-content .nav-tab, .main-content .filter-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .main-content .filter-dropdowns select {
+        padding: 6px 10px;
+        font-size: 0.85em;
+    }
+
+    .anime-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller cards on medium screens */
+        gap: 15px;
+    }
+
+    .anime-card img {
+        height: 180px;
+    }
+
+    .anime-card-title {
+        font-size: 1.1em;
+    }
+
+    .anime-card-details, .anime-genres {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content .seasonal-nav, .main-content .seasonal-filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-content .nav-tab, .main-content .filter-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .main-content .filter-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-content .filter-dropdowns select {
+        width: 100%;
+    }
+
+    .anime-list {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 10px;
+    }
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .main-content .seasonal-nav {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .main-content .nav-tab {
+    color: var(--text-color);
+    border-left-color: var(--card-border);
+}
+
+body[data-theme='dark'] .main-content .nav-tab:hover {
+    background-color: var(--nav-item-active);
+    color: white;
+}
+
+body[data-theme='dark'] .main-content .nav-tab.active {
+    background-color: var(--nav-item-active);
+    color: white;
+}
+
+body[data-theme='dark'] .main-content .nav-tab.active::after {
+    background-color: white;
+}
+
+body[data-theme='dark'] .main-content .filter-buttons {
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .main-content .filter-button {
+    color: var(--text-color);
+    border-left-color: var(--card-border);
+}
+
+body[data-theme='dark'] .main-content .filter-button:hover {
+    background-color: var(--nav-item-active);
+    color: white;
+    border-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .main-content .filter-button.active {
+    background-color: var(--nav-item-active);
+    color: white;
+    border-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .main-content .filter-dropdowns select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .main-content .filter-dropdowns select:focus {
+    border-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .anime-section h2 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .anime-list::-webkit-scrollbar-track {
+    background: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-list::-webkit-scrollbar-thumb {
+    background: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .anime-card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] .anime-card-image {
+    border-bottom-color: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-card-info h3 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .anime-card-details {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] .anime-card-details .rating i,
+body[data-theme='dark'] .anime-card-details .members i {
+    color: var(--icon-color);
+}
+
+body[data-theme='dark'] .anime-genres {
+    color: var(--text-tertiary);
+}
+
+body[data-theme='dark'] .bookmark-icon {
+    color: var(--icon-color);
+}
+
+body[data-theme='dark'] .bookmark-icon.fas {
+    color: #ffc107;
+}

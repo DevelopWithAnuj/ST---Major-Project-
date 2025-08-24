@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Tracker - Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-left">
+            <a href="home.html" class="header-icon"><i class="fas fa-arrow-left"></i></a>
+            <h1 class="app-title">Profile</h1>
+        </div>
+        <div class="header-right">
+            <a href="settings.html" class="header-icon"><i class="fas fa-cog"></i></a>
+            <button id="theme-toggle" class="theme-toggle-button"><i class="fas fa-sun"></i></button>
+            <i class="fas fa-bell notification-icon"></i>
+            <button id="menu-toggle" class="header-icon"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-sidebar">&times;</button>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="challenges.html"><i class="fas fa-fist-raised"></i> Challenge Stack</a>
+        <a href="help.html"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact Support</a>
+        <a href="admin.html" id="admin-dashboard-link" style="display: none;">
+            <i class="fas fa-user-shield"></i> Admin Dashboard</a>
+        <a href="welcome.html" id="logout-sidebar"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content">
+        <div class="profile-container">
+            <div class="profile-left">
+                <!-- Display View -->
+                <div id="profile-display-view" class="profile-card">
+                    <img src="assets/logo.png" alt="User Avatar" class="profile-avatar">
+                    <h2 class="profile-username">Username</h2>
+                    <p class="profile-email">user@example.com</p>
+                    <button id="edit-profile-btn" class="btn-primary">Edit Profile</button>
+                </div>
+                <!-- Edit View -->
+                <div id="profile-edit-view" class="profile-card" style="display:none;">
+                    <form id="edit-profile-form">
+                        <div class="form-group">
+                            <label for="edit-avatar">Avatar URL:</label>
+                            <input type="url" id="edit-avatar" name="avatar">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-username">Username:</label>
+                            <input type="text" id="edit-username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-email">Email:</label>
+                            <input type="email" id="edit-email" name="email" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                            <button type="button" id="cancel-edit-btn" class="btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="profile-right">
+                <div class="profile-tabs">
+                    <button class="tab-link active" data-tab="joined-clubs">Joined Clubs</button>
+                    <button class="tab-link" data-tab="bookmarked-anime">Bookmarked Anime</button>
+                </div>
+                <div id="joined-clubs" class="tab-content active">
+                    <div class="profile-grid" id="joined-clubs-grid">
+                        <!-- Joined clubs will be loaded here -->
+                    </div>
+                </div>
+                <div id="bookmarked-anime" class="tab-content">
+                    <div class="profile-grid" id="bookmarked-anime-grid">
+                        <!-- Bookmarked anime will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

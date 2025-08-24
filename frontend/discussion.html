@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Tracker - Discussions</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/discussion.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-left">
+        <img src="assets/logo.png" alt="App Logo" class="app-logo" />
+        <h1 class="app-title">Discussions</h1>
+      </div>
+      <div class="header-right">
+        <button id="theme-toggle" class="theme-toggle-button">
+          <i class="fas fa-sun"></i>
+        </button>
+        <i class="fas fa-bell notification-icon"></i>
+        <button id="menu-toggle" class="header-icon">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <button class="close-btn" id="close-sidebar">&times;</button>
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="challenges.html"><i class="fas fa-fist-raised"></i> Challenge Stack</a>
+      <a href="help.html"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Support</a>
+      <a href="admin.html" id="admin-dashboard-link" style="display: none;">
+            <i class="fas fa-user-shield"></i> Admin Dashboard</a>
+      <a href="welcome.html" id="logout-sidebar"><i class="fas fa-sign-out-alt"></i> Logout</a
+      >
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content">
+      <section class="search-section">
+        <h2>Community Discussions</h2>
+        <input
+          type="text"
+          id="club-search"
+          placeholder="Search for clubs..."
+          class="search-bar"
+        />
+        <div class="feature-update">
+          <span class="icon">⚠️</span>
+          <strong>Upcoming Feature:</strong>"We’re excited to announce that enhanced Discussion features, including live chats, advanced club management, and threaded conversations, are coming in the next version! Stay tuned for an even better community experience."
+        </div>
+      </section>
+
+      <section class="my-clubs-section">
+        <h2>
+          My Clubs
+          <i
+            id="create-club-icon"
+            class="fas fa-plus-circle create-club-icon"
+          ></i>
+          <i
+            id="toggle-my-clubs-icon"
+            class="fas fa-chevron-up toggle-my-clubs-icon"
+          ></i>
+        </h2>
+        <div id="my-clubs-list" class="club-list">
+          <!-- My joined clubs will be loaded here -->
+          <div class="club-card">
+            <img
+              src="assets/JujutsuKaisen.png"
+              alt="Club 1"
+              class="club-image"
+            />
+            <div class="club-info-content">
+              <h3>Jujutsu Kaisen Fan Club</h3>
+              <p>Active 2 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/One Piece.png" alt="Club 2" class="club-image" />
+            <div class="club-info-content">
+              <h3>One Piece Nakama</h3>
+              <p>Active 5 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <section class="recently-active-clubs-section">
+        <h2>Recently Active Clubs</h2>
+        <div id="recently-active-clubs-list" class="club-list">
+          <div class="club-card">
+            <img
+              src="assets/attack_on_titan.png"
+              alt="Club 3"
+              class="club-image"
+            />
+            <div class="club-info-content">
+              <h3>Attack on Titan Fans</h3>
+              <p>Active 1 hour ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img
+              src="assets/demon_slayer.png"
+              alt="Club 4"
+              class="club-image"
+            />
+            <div class="club-info-content">
+              <h3>Demon Slayer Corps</h3>
+              <p>Active 3 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img
+              src="assets/my_hero_academia.png"
+              alt="Club 5"
+              class="club-image"
+            />
+            <div class="club-info-content">
+              <h3>My Hero Academia Guild</h3>
+              <p>Active 4 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/spyxfamily.png" alt="Club 6" class="club-image" />
+            <div class="club-info-content">
+              <h3>Spy x Family Agency</h3>
+              <p>Active 6 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img
+              src="assets/chainsaw_man.png"
+              alt="Club 7"
+              class="club-image"
+            />
+            <div class="club-info-content">
+              <h3>Chainsaw Man Fanatics</h3>
+              <p>Active 8 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/frieren.png" alt="Club 8" class="club-image" />
+            <div class="club-info-content">
+              <h3>Frieren: Beyond Journey's End</h3>
+              <p>Active 9 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img
+              src="assets/solo_leveling.png"
+              alt="Club 9"
+              class="club-image"
+            />
+            <div class="club-info-content">
+              <h3>Solo Leveling Guild</h3>
+              <p>Active 11 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/blue-lock.png" alt="Club 10" class="club-image" />
+            <div class="club-info-content">
+              <h3>Blue Lock Strikers</h3>
+              <p>Active 12 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/dr-stone.png" alt="Club 11" class="club-image" />
+            <div class="club-info-content">
+              <h3>Dr. Stone's Science Kingdom</h3>
+              <p>Active 14 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/fire-force.png" alt="Club 12" class="club-image" />
+            <div class="club-info-content">
+              <h3>Fire Force Company 8</h3>
+              <p>Active 15 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/mashle.png" alt="Club 13" class="club-image" />
+            <div class="club-info-content">
+              <h3>Mashle: Magic and Muscles</h3>
+              <p>Active 17 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/kaiju-no-8.png" alt="Club 14" class="club-image" />
+            <div class="club-info-content">
+              <h3>Kaiju No. 8 Defense Force</h3>
+              <p>Active 18 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/dandadan.png" alt="Club 15" class="club-image" />
+            <div class="club-info-content">
+              <h3>Dandadan Occult Club</h3>
+              <p>Active 20 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+          <div class="club-card">
+            <img src="assets/BleachTYBW.png" alt="Club 16" class="club-image" />
+            <div class="club-info-content">
+              <h3>Bleach: Thousand-Year Blood War</h3>
+              <p>Active 22 hours ago</p>
+              <div class="club-actions">
+                <button class="btn join-club-btn">Join</button>
+                <button class="btn view-club-btn">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="discussion.html" class="nav-item active">
+        <i class="fas fa-comments"></i>
+        <span>Discussions</span>
+      </a>
+      <a href="discover.html" class="nav-item">
+        <i class="fas fa-compass"></i>
+        <span>Discover</span>
+      </a>
+      <a href="seasonal.html" class="nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Seasonal</span>
+      </a>
+      <a href="mylist.html" class="nav-item">
+        <i class="fas fa-list"></i>
+        <span>My List</span>
+      </a>
+    </nav>
+
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/discussion.js"></script>
+    <script src="js/club.js"></script>
+  </body>
+</html>

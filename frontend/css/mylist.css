@@ -1,0 +1,341 @@
+.mylist-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tab-link {
+    background-color: transparent;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid var(--card-border);
+}
+
+.tab-link:last-child {
+    border-right: none;
+}
+
+.tab-link.active {
+    background-color: var(--nav-item-active);
+    color: white;
+    font-weight: 600;
+}
+
+.tab-link:not(.active):hover {
+    background-color: var(--card-border);
+}
+
+.mylist-anime-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.anime-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative; /* For bookmark icon positioning */
+    /* Remove flexbox related properties */
+    flex: none;
+    width: auto; /* Let grid handle width */
+    margin-right: 0;
+    scroll-snap-align: none;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 200px; /* Adjusted for responsiveness */
+    object-fit: cover;
+    display: block;
+}
+
+.anime-card-image {
+    width: 100%;
+    height: 220px; /* Fixed height for a uniform look */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-bottom: 1px solid var(--card-border);
+}
+
+.anime-card-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.anime-card-info h3 {
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 5px 0; /* Adjusted margin */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.anime-card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.watch-progress {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.progress-input {
+    width: 70px;
+    padding: 6px;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    text-align: center;
+    margin-left: 5px;
+}
+
+.anime-card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    gap: 10px;
+}
+
+.action-btn {
+    background-color: var(--nav-item-active);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9em;
+    flex-grow: 1;
+}
+
+.action-btn:hover {
+    transform: scale(1.05);
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .mylist-tabs {
+        flex-direction: column;
+    }
+
+    .tab-link {
+        border-bottom: 1px solid var(--card-border);
+        border-right: none;
+    }
+
+    .mylist-anime-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .anime-card-image {
+        height: 220px;
+    }
+
+    .anime-card-info h3 {
+        font-size: 1em;
+    }
+
+    .watch-progress,
+    .anime-card-details {
+        font-size: 0.8em;
+    }
+
+    .action-btn {
+        padding: 8px 10px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .mylist-anime-container {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-card-image {
+        height: 250px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.close-button {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.modal-actions .action-btn {
+    flex-grow: 0;
+    width: 45%;
+}
+
+#move-status-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .mylist-tabs {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .tab-link {
+    color: var(--text-color);
+    border-right-color: var(--card-border);
+}
+
+body[data-theme='dark'] .tab-link.active {
+    background-color: var(--nav-item-active);
+    color: white;
+}
+
+body[data-theme='dark'] .tab-link:not(.active):hover {
+    background-color: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] .anime-card-image {
+    border-bottom-color: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-card .anime-card-info h3 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .anime-card-details {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] .watch-progress {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] .progress-input {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body[data-theme='dark'] .action-btn {
+    background-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .remove-btn {
+    background-color: #e74c3c;
+}
+
+body[data-theme='dark'] .remove-btn:hover {
+    background-color: #c0392b;
+}
+
+body[data-theme='dark'] .modal-content {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .close-button {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .close-button:hover,
+body[data-theme='dark'] .close-button:focus {
+    color: #fff;
+}
+
+body[data-theme='dark'] #move-status-select {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}

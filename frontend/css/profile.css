@@ -1,0 +1,282 @@
+.profile-container {
+    display: flex;
+    gap: 30px;
+}
+
+.profile-left {
+    flex: 0 0 300px;
+}
+
+.profile-right {
+    flex-grow: 1;
+}
+
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid var(--primary-color);
+}
+
+.profile-username {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.profile-email {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+#edit-profile-btn {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#edit-profile-btn > a {
+    color: white;
+}
+
+#edit-profile-btn:hover {
+    background-color: green;
+}
+#edit-profile-btn:hover > a {
+    color: white;
+}
+#edit-profile-btn:hover
+#edit-profile-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#edit-profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#edit-profile-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+}
+
+.profile-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--card-border);
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.tab-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.grid-item {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.grid-item p {
+    padding: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Bookmarked Anime Card Styles */
+.bookmarked-anime-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 150px; /* Smaller width */
+}
+
+.bookmarked-anime-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bookmarked-anime-card img {
+    width: 100%;
+    height: 180px; /* Adjusted height */
+    object-fit: cover;
+}
+
+.bookmarked-anime-card-info {
+    padding: 10px;
+}
+
+.bookmarked-anime-card-info h4 {
+    font-size: 0.9em; /* Smaller font size */
+    margin: 0 0 8px 0;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bookmarked-anime-card-info .btn-secondary {
+    padding: 6px 10px; /* Smaller button */
+    font-size: 0.8em; /* Smaller button font */
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .profile-card {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .profile-avatar {
+    border-color: var(--primary-color);
+}
+
+body[data-theme='dark'] .profile-email {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] #edit-profile-btn {
+    background-color: var(--primary-color);
+}
+
+body[data-theme='dark'] #edit-profile-btn:hover {
+    background-color: var(--nav-item-hover);
+}
+
+body[data-theme='dark'] #edit-profile-form input {
+    background-color: var(--input-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+body[data-theme='dark'] .btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+body[data-theme='dark'] .btn-secondary:hover {
+    background-color: var(--primary-color);
+}
+
+body[data-theme='dark'] .profile-tabs {
+    border-bottom-color: var(--card-border);
+}
+
+body[data-theme='dark'] .tab-link {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] .tab-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+body[data-theme='dark'] .grid-item {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .grid-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] .grid-item p {
+    color: var(--text-primary);
+}
+
+body[data-theme='dark'] .bookmarked-anime-card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .bookmarked-anime-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] .bookmarked-anime-card .bookmarked-anime-card-info h4 {
+    color: var(--text-primary);
+}

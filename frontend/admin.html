@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-left">
+        <a href="home.html" class="header-icon"
+          ><i class="fas fa-arrow-left"></i
+        ></a>
+        <h1 class="app-title">Admin Panel</h1>
+      </div>
+      <div class="header-right">
+        <button id="theme-toggle" class="theme-toggle-button">
+          <i class="fas fa-sun"></i>
+        </button>
+        <i class="fas fa-bell notification-icon"></i>
+        <button id="menu-toggle" class="header-icon">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <button class="close-btn" id="close-sidebar">&times;</button>
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+      <a href="challenges.html"
+        ><i class="fas fa-fist-raised"></i> Challenge Stack</a
+      >
+      <a href="help.html"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Support</a>
+      <a href="admin.html" id="admin-dashboard-link" style="display: none">
+        <i class="fas fa-user-shield"></i> Admin Dashboard</a
+      >
+      <a href="welcome.html" id="logout-sidebar"
+        ><i class="fas fa-sign-out-alt"></i> Logout</a
+      >
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content">
+      <section class="admin-panel-section">
+        <h2>Admin Dashboard</h2>
+        <div
+          style="
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+          "
+        >
+          <h2>Admin Panel</h2>
+          <p style="color: gray">
+            🚧 This feature is not available in the current version.<br />
+            It will be implemented in the next release with full moderation
+            tools.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

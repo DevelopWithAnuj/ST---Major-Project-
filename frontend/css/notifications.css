@@ -1,0 +1,73 @@
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-item.unread {
+    border-left: 5px solid var(--nav-item-active);
+}
+
+.notification-icon {
+    font-size: 1.8em;
+    color: var(--nav-item-active);
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.notification-time {
+    font-size: 0.8em;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .notification-item {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .notification-item.unread {
+    border-left-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .notification-icon {
+    color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .notification-content h4 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .notification-content p {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] .notification-time {
+    color: var(--text-tertiary);
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/anime-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-left">
+            <a href="discover.html" class="header-icon"><i class="fas fa-arrow-left"></i></a>
+            <h1 class="app-title" id="anime-title-header">Anime Details</h1>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle-button"><i class="fas fa-sun"></i></button>
+            <i class="fas fa-heart favorite-icon"></i>
+            <i class="fas fa-share-alt share-icon"></i>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="anime-details-container">
+            <div class="anime-header-section">
+                <img id="anime-poster" src="" alt="Anime Poster" class="anime-poster">
+                <div class="anime-header-info">
+                    <h2 id="anime-title"></h2>
+                    <p id="anime-release-year" class="anime-meta"></p>
+                    <p id="anime-genres" class="anime-meta"></p>
+                    <p id="anime-synopsis" class="anime-synopsis"></p>
+                </div>
+            </div>
+
+            <section class="progress-tracker-section">
+                <h3>Progress Tracker</h3>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <p id="episode-progress">0 / ?? Episodes Watched</p>
+                <div class="progress-buttons">
+                    <button id="mark-watched-btn" class="btn-primary">Mark Watched</button>
+                    <button id="reset-progress-btn" class="btn-secondary">Reset Progress</button>
+                </div>
+            </section>
+
+            <section class="spoiler-protection-section">
+                <h3>Spoiler Protection</h3>
+                <label class="switch">
+                    <input type="checkbox" id="spoiler-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="spoiler-text">Toggle to hide/show spoilers</span>
+            </section>
+
+            <section class="ratings-polls-section">
+                <h3>Ratings & Polls</h3>
+                <div class="rating-section">
+                    <h4>Your Rating:</h4>
+                    <div id="star-rating" class="star-rating">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+                <div class="poll-section">
+                    <h4>Community Polls</h4>
+                    <div id="polls-container">
+                        <!-- Polls will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-comments-section">
+                <h3>Reviews & Comments</h3>
+                <div class="review-form">
+                    <h4>Post Your Review</h4>
+                    <textarea id="review-text" placeholder="Write your review here..."></textarea>
+                    <div class="review-form-actions">
+                        <div id="review-star-rating" class="star-rating">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <button id="submit-review-btn" class="btn-primary">Submit Review</button>
+                    </div>
+                </div>
+                <div id="reviews-list">
+                    <!-- Reviews will be loaded here by JavaScript -->
+                </div>
+            </section>
+
+            <section class="related-anime-section">
+                <h3>Related Anime</h3>
+                <div id="related-anime-list" class="anime-list">
+                    <!-- Related anime will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <button id="my-list-fab" class="fab"><i class="fas fa-plus"></i></button>
+
+    <div id="my-list-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Manage My List</h2>
+            <div class="form-group">
+                <label for="list-status">Status:</label>
+                <select id="list-status">
+                    <option value="watching">Watching</option>
+                    <option value="completed">Completed</option>
+                    <option value="on-hold">On Hold</option>
+                    <option value="dropped">Dropped</option>
+                    <option value="plan-to-watch">Plan to Watch</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="list-progress">Progress (Episodes):</label>
+                <input type="number" id="list-progress" min="0">
+            </div>
+            <div class="form-group">
+                <label for="list-score">Score (0-10):</label>
+                <input type="number" id="list-score" min="0" max="10">
+            </div>
+            <div class="form-group">
+                <label for="list-date">Date Added:</label>
+                <input type="date" id="list-date">
+            </div>
+            <button id="save-list-entry" class="btn-primary">Save to List</button>
+            <button id="remove-from-list" class="btn-secondary">Remove from List</button>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="discussion.html" class="nav-item"><i class="fas fa-comments"></i><span>Discussions</span></a>
+        <a href="discover.html" class="nav-item active"><i class="fas fa-compass"></i><span>Discover</span></a>
+        <a href="seasonal.html" class="nav-item"><i class="fas fa-calendar-alt"></i><span>Seasonal</span></a>
+        <a href="mylist.html" class="nav-item"><i class="fas fa-list"></i><span>My List</span></a>
+    </nav>
+
+    <script src="js/main.js"></script>
+    <script src="js/anime-detail.js"></script>
+</body>
+</html>

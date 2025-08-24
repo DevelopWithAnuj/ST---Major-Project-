@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Anime Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css"> <!-- Reusing auth.css for general layout -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .welcome-container {
+            text-align: center;
+            padding: 50px;
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        .welcome-container h1 {
+            color: var(--primary-color);
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .welcome-container p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        .welcome-buttons .btn {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <img src="assets/logo.png" alt="Anime Tracker Logo" class="logo" style="width: 100px; height: 100px; margin-bottom: 20px;">
+        <h1>Welcome to Anime Tracker!</h1>
+        <p>Your ultimate companion for tracking, discovering, and discussing your favorite anime.</p>
+        <div class="welcome-buttons">
+            <a href="login.html" class="btn">Login</a>
+            <a href="signup.html" class="btn">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

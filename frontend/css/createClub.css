@@ -1,0 +1,148 @@
+/* createClub.css */
+
+.create-club-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.create-club-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    background-color: var(--search-bg);
+    color: var(--search-text);
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group select {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    background-color: var(--search-bg);
+    color: var(--search-text);
+    font-size: 1em;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions .btn-primary,
+.form-actions .btn-secondary {
+    flex: 1;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--nav-item-active);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .create-club-container {
+    background-color: var(--card-background);
+}
+
+body[data-theme='dark'] .create-club-container h2 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .form-group label {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .form-group input[type="text"],
+body[data-theme='dark'] .form-group input[type="url"],
+body[data-theme='dark'] .form-group textarea {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body[data-theme='dark'] .form-group select {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body[data-theme='dark'] .btn-primary {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+body[data-theme='dark'] .btn-primary:hover {
+    background-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+body[data-theme='dark'] .btn-secondary:hover {
+    background-color: #5a6268;
+}

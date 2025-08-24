@@ -1,0 +1,76 @@
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding-top: 0; /* Remove padding-top as flexbox handles centering */
+}
+
+.modal-content {
+    background-color: var(--card-bg); /* Changed from --background-color */
+    margin: auto; /* Keep auto margin for older browser compatibility with flex */
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: var(--shadow); /* Changed from --box-shadow */
+    position: relative;
+    animation-name: animatetop; /* Add animation */
+    animation-duration: 0.4s; /* Add animation duration */
+}
+
+.modal-content h2 {
+    color: var(--text-color); /* Changed from --text-color-light */
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.close-button {
+    color: var(--text-secondary); /* Changed from --text-color-secondary */
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add animatetop keyframes if not already present in style.css or other linked CSS */
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .modal-content {
+    background-color: var(--card-background);
+}
+
+body[data-theme='dark'] .modal-content h2 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .close-button {
+    color: var(--text-secondary);
+}
+
+body[data-theme='dark'] .close-button:hover,
+body[data-theme='dark'] .close-button:focus {
+    color: var(--primary-color);
+}

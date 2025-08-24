@@ -1,0 +1,320 @@
+/* discover.css */
+
+.discover-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-section input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--card-border);
+    border-radius: 25px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1em;
+    max-width: 500px;
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: var(--nav-item-active);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+}
+
+.search-section button:hover {
+    background-color: var(--nav-item-hover);
+}
+
+.anime-section {
+    margin-bottom: 30px;
+}
+
+.anime-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.anime-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    gap: 15px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.anime-list::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+.anime-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.anime-list::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.anime-card {
+    flex: 0 0 auto;
+    width: 150px; 
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    scroll-snap-align: start;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.anime-card-info {
+    padding: 8px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.anime-card-info h3 {
+    color: var(--text-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bookmark-icon {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.2s ease-in-out;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+}
+
+.bookmark-icon.bookmarked {
+    color: #ffc107;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .anime-section h2 {
+        font-size: 1.4em;
+    }
+
+    .anime-card {
+        width: 120px; 
+    }
+
+    .anime-card img {
+        height: 140px;
+    }
+
+    .anime-card-info h3 {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-section h2 {
+        font-size: 1.2em;
+    }
+
+    .anime-card {
+        width: 100px;
+    }
+
+    .anime-card img {
+        height: 120px;
+    }
+
+    
+.anime-card-info h3 {
+    font-size: 0.75em;
+}
+}
+
+.club-section {
+    margin-bottom: 30px;
+}
+
+.club-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.club-list {
+        display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    gap: 15px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.club-list::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+.club-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.club-list::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.club-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 0 0 auto;
+    width: 150px; 
+    border: 1px solid var(--card-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    scroll-snap-align: start;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.club-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.club-card-info {
+    padding: 8px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.club-card-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: var(--text-color);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.club-card-info p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Dark Theme Overrides */
+body[data-theme='dark'] .search-section input[type="text"] {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body[data-theme='dark'] .search-section button {
+    background-color: var(--nav-item-active);
+}
+
+body[data-theme='dark'] .anime-section h2 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .anime-card {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .anime-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] .anime-card-info h3 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .club-section h2 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .club-card {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+}
+
+body[data-theme='dark'] .club-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark'] .club-card-info h3 {
+    color: var(--text-color);
+}
+
+body[data-theme='dark'] .club-card-info p {
+    color: var(--text-secondary);
+}

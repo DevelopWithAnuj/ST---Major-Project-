@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Tracker - Discover</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/discover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-left">
+            <img src="assets/logo.png" alt="App Logo" class="app-logo">
+            <h1 class="app-title">Discover</h1>
+        </div>
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle-button">
+                <i class="fas fa-sun"></i>
+            </button>
+            <i class="fas fa-bell notification-icon"></i>
+            <button id="menu-toggle" class="header-icon"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-sidebar">&times;</button>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+        <a href="challenges.html"><i class="fas fa-fist-raised"></i> Challenge Stack</a>
+        <a href="help.html"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact Support</a>
+        <a href="admin.html" id="admin-dashboard-link" style="display: none;">
+            <i class="fas fa-user-shield"></i> Admin Dashboard</a>
+        <a href="welcome.html" id="logout-sidebar"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content">
+        <section class="search-section">
+            <input type="text" id="search-input" placeholder="Search for anime...">
+            <button id="search-button"><i class="fas fa-search"></i> Search</button>
+        </section>
+
+        <section class="anime-section" id="search-results-section" style="display: none;">
+            <h2>Search Results</h2>
+            <div class="anime-list" id="search-results-list">
+                <!-- Search results will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="anime-section">
+            <h2>Now Watching</h2>
+            <div class="anime-list" id="now-watching-carousel">
+                <!-- Anime cards will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="anime-section">
+            <h2>Trending</h2>
+            <div class="anime-list" id="trending-carousel">
+                <!-- Anime cards will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="anime-section">
+            <h2>Just Added</h2>
+            <div class="anime-list" id="just-added-carousel">
+                <!-- Anime cards will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="club-section">
+            <h2>Discover Clubs</h2>
+            <div class="club-list" id="club-list">
+                <!-- Club cards will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="discussion.html" class="nav-item">
+            <i class="fas fa-comments"></i>
+            <span>Discussions</span>
+        </a>
+        <a href="discover.html" class="nav-item active">
+            <i class="fas fa-compass"></i>
+            <span>Discover</span>
+        </a>
+        <a href="seasonal.html" class="nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Seasonal</span>
+        </a>
+        <a href="mylist.html" class="nav-item">
+            <i class="fas fa-list"></i>
+            <span>My List</span>
+        </a>
+    </nav>
+
+    <script src="js/main.js"></script>
+    <script src="js/discover.js"></script>
+</body>
+</html>
